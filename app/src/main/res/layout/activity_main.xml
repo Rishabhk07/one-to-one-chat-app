@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.rishabhkhanna.letsknown.MainActivity"
+    android:background= "#00239c"
+    >
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/chaticon"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="61dp"
+        android:id="@+id/hearticon"
+        />
+
+    <TextView
+        android:layout_below="@id/hearticon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ever felt that you have nothing to talk on tinder chat or you dont know how to make an interstign conversation , Dont worry we are here to make you\nknown"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:paddingTop="40dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="20dp"
+        android:textColor="#ffffff"
+        android:elevation="4dp"
+        />
+
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="Signin"
+        android:textColor="#00239c"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/takesignin"/>
+
+
+    <Button
+
+        android:layout_marginTop="30dp"
+        android:layout_margin="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Signup"
+        android:textColor="#00239c"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/takesignup"/>
+
+
+
+</RelativeLayout>

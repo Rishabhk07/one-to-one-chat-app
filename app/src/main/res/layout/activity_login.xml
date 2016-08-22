@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.UserCreationActivity"
+    android:background="#ef3340">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:mtf_openKeyboardOnFocus="true"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="email"
+            android:textColor="#333"
+            android:textColorHint="#666"
+            android:textSize="15sp"
+            android:id="@+id/emailETLogin"
+            />
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/password"
+        app:mtf_openKeyboardOnFocus="true"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:textColor="#333"
+            android:textColorHint="#666"
+            android:textSize="15sp"
+            android:id="@+id/passwordETLogin"
+
+            />
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+        <Button
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Signin"
+            android:textColor="#ef3340"
+            android:paddingLeft="100dp"
+            android:paddingRight="100dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/signinButton"/>
+
+    </LinearLayout>
+</RelativeLayout>
