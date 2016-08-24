@@ -1,5 +1,6 @@
 package com.example.rishabhkhanna.letsknown.view;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -12,11 +13,14 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.rishabhkhanna.letsknown.R;
+import com.example.rishabhkhanna.letsknown.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class UserCreationActivity extends AppCompatActivity {
 
@@ -56,9 +60,9 @@ public class UserCreationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String email = emailText.getText().toString();
-                String name = nameText.getText().toString();
-                String password = passwordText.getText().toString();
+                final String email = emailText.getText().toString();
+                final String name = nameText.getText().toString();
+                final String password = passwordText.getText().toString();
 
                 if(email == null ){
 
@@ -83,7 +87,19 @@ public class UserCreationActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d("TAG" , "createUserWithEmail:Complete:" + task.isSuccessful());
 
-                        if(!task.isSuccessful()){
+                        if(task.isSuccessful()){
+
+
+                            FirebaseDatabase databaseref = FirebaseDatabase.getInstance();
+                            DatabaseReference newUserRef = databaseref.getReference("users");
+
+                            FirebaseUser newUser =  mAuth.getCurrentUser();
+                            User user = new User(name, email, newUser.getUid() , password);
+                            newUserRef.push().setValue(user);
+                            Intent intent = new Intent(UserCreationActivity.this , ChatPage.class);
+                            startActivity(intent);
+
+                        }else if(!task.isSuccessful()){
                             Toast.makeText(UserCreationActivity.this, "could not sign upp yet , try again later !!", Toast.LENGTH_SHORT).show();
                         }
                     }

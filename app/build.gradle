@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.rishabhkhanna.letsknown"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -22,10 +22,21 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.0.0'
+    compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.google.firebase:firebase-auth:9.4.0'
     compile 'com.google.firebase:firebase-database:9.4.0'
     compile 'com.github.florent37:materialtextfield:1.0.5'
-    compile 'com.android.support:design:23.0.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    // Single target that includes all FirebaseUI libraries
+    compile 'com.firebaseui:firebase-ui:0.5.1'
+
+    // FirebaseUI Database only
+    compile 'com.firebaseui:firebase-ui-database:0.5.1'
+
+    // FirebaseUI Auth only
+    compile 'com.firebaseui:firebase-ui-auth:0.5.1'
+    compile 'me.himanshusoni.chatmessageview:chat-message-view:1.0.3'
 }
 apply plugin: 'com.google.gms.google-services'
