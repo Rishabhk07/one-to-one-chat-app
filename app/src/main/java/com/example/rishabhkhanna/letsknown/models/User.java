@@ -9,6 +9,7 @@ public class User {
     String email;
     String uid;
     String password;
+    String status;
 
     public User() {
     }
@@ -20,15 +21,12 @@ public class User {
         this.email = email;
         this.uid = uid;
         this.password = password;
+        this.status = "Hey there !! i am using whatsapp";
     }
 
-    public User(String email, String name, String password) {
-        this.email = email;
-        this.name = name;
-        this.password = password;
+    public String getPassword() {
+        return password;
     }
-
-
 
     public String getName() {
         return name;

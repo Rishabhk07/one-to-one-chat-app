@@ -5,27 +5,9 @@
     tools:context="com.example.rishabhkhanna.letsknown.Fragments.contactFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <RelativeLayout
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/profile_image"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:src="@drawable/chaticon"
-            android:layout_margin="20dp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:text="Rishabh Khanna"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/profile_image"
-            android:layout_toEndOf="@+id/profile_image" />
-
-    </RelativeLayout>
+        android:layout_height="match_parent"
+        android:id="@+id/userlistview"></ListView>
 
 </FrameLayout>

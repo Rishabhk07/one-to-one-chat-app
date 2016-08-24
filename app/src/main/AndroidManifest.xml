@@ -20,7 +20,10 @@
         <activity
             android:name=".view.ChatPage"
             android:label="@string/title_activity_chat_page"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".view.ChatMessagesActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            ></activity>
     </application>
 
 </manifest>

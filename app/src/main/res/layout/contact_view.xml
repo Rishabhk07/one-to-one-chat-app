@@ -1,10 +1,7 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Fragments.UserChatsFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,8 +22,10 @@
             android:text="Rishabh Khanna"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/profile_image"
-            android:layout_toEndOf="@+id/profile_image" />
-        
+            android:layout_toEndOf="@+id/profile_image"
+            android:id="@+id/userNamesTV"/>
+
+
     </RelativeLayout>
 
-</FrameLayout>
+</LinearLayout>
