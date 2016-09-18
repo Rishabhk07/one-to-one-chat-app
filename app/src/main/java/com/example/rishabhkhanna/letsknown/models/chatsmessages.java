@@ -7,40 +7,77 @@ import java.util.Map;
  */
 public class chatsmessages {
 
-    String name;
-    String email;
-    String uid;
-    String message;
-    String timestamp;
+//    String name;
+//    String email;
+//    String uid;
+//    String message;
+//    Map<String,String> timestamp;
 
-    public chatsmessages(String name, String email, String uid, String message, Map<String, String> timestamp) {
-        this.name = name;
-        this.email = email;
-        this.uid = uid;
-        this.message = message;
-        this.timestamp = timestamp;
-    }
+    String sender;
+    String receiver;
+    String message;
 
     public chatsmessages() {
     }
 
-    public String getName() {
-        return name;
+    public chatsmessages(String sender, String receiver, String message) {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.message = message;
     }
 
-    public String getEmail() {
-        return email;
+    public String getSender() {
+        return sender;
     }
 
-    public String getUid() {
-        return uid;
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+
+    public String getReceiver() {
+        return receiver;
+    }
+
+    public void setReceiver(String receiver) {
+        this.receiver = receiver;
     }
 
     public String getMessage() {
         return message;
     }
 
-    public String getTimestamp() {
-        return timestamp;
+    public void setMessage(String message) {
+        this.message = message;
     }
+
+    //    public chatsmessages(String name, String email, String uid, String message, Map<String, String> timestamp) {
+//        this.name = name;
+//        this.email = email;
+//        this.uid = uid;
+//        this.message = message;
+//        this.timestamp = timestamp;
+//    }
+//
+//    public chatsmessages() {
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public String getEmail() {
+//        return email;
+//    }
+//
+//    public String getUid() {
+//        return uid;
+//    }
+//
+//    public String getMessage() {
+//        return message;
+//    }
+//
+//    public Map<String, String>  getTimestamp() {
+//        return timestamp;
+//    }
 }

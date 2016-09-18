@@ -17,6 +17,7 @@ import com.example.rishabhkhanna.letsknown.R;
 import com.example.rishabhkhanna.letsknown.models.User;
 import com.example.rishabhkhanna.letsknown.view.ChatMessagesActivity;
 import com.firebase.ui.database.FirebaseListAdapter;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -44,17 +45,23 @@ public class ContactFragment extends Fragment {
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("users");
 
+        databaseReference.keepSynced(true);
+
         ListView listview = (ListView) view.findViewById(R.id.userlistview);
 
         mAdapter = new FirebaseListAdapter<User>(getActivity() ,User.class , R.layout.contact_view , databaseReference ) {
             @Override
             protected void populateView(View eachTupleView, User usermodel, int position) {
 
-                ((TextView)eachTupleView.findViewById(R.id.userNamesTV)).setText(usermodel.getName());
+                if(!usermodel.getUid().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
 
-                eachTupleView.setTag( 1, usermodel.getUid());
-                eachTupleView.setTag(2 , usermodel.getName());
-                eachTupleView.setTag(3 , usermodel.getEmail());
+                    ((TextView) eachTupleView.findViewById(R.id.userNamesTV)).setText(usermodel.getName());
+
+                    eachTupleView.setTag(R.string.uid, usermodel.getUid().toString());
+                    eachTupleView.setTag(R.string.name, usermodel.getName().toString());
+                    eachTupleView.setTag(R.string.email, usermodel.getEmail().toString());
+                    mAdapter.notifyDataSetChanged();
+                }
             }
 
 
@@ -62,13 +69,14 @@ public class ContactFragment extends Fragment {
 
         listview.setAdapter(mAdapter);
 
+
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                String uid = (String) view.getTag(1);
-                String name = (String) view.getTag(2);
-                String email = (String) view.getTag(3);
+                String uid = (String) view.getTag(R.string.uid);
+                String name = (String) view.getTag(R.string.name);
+                String email = (String) view.getTag(R.string.email);
 
                 Intent intent = new Intent(getActivity() , ChatMessagesActivity.class);
                 intent.putExtra("uid" , uid);

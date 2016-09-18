@@ -6,4 +6,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="name">name</string>
+    <string name="email">email</string>
+    <string name="uid">uid</string>
+    <string name="blue">#9999ff</string>
 </resources>

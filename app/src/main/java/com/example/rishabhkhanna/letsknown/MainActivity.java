@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.example.rishabhkhanna.letsknown.view.LoginActivity;
 import com.example.rishabhkhanna.letsknown.view.UserCreationActivity;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     Button signupButton;
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
         signinButton = (Button) findViewById(R.id.takesignin);
         signupButton = (Button) findViewById(R.id.takesignup);
