@@ -89,13 +89,12 @@ public class ChatMessagesActivity extends AppCompatActivity {
 
                     ChatMessageView messageView = (ChatMessageView) v.findViewById(R.id.chatmessageVIEW);
                     TextView text = (TextView) v.findViewById(R.id.chattextTV);
-
-
                     messageView.setVisibility(View.VISIBLE);
                     messageView.setGravity(Gravity.LEFT);
+                    messageView.setArrowPosition(ChatMessageView.ArrowPosition.LEFT);
+                    messageView.setArrowGravity(ChatMessageView.ArrowGravity.START);
                     messageView.setBackgroundColors(R.color.colorAccent , R.color.buttonColorPressed);
                     text.setText(model.getMessage());
-
                     mAdapter.notifyDataSetChanged();
 
 
@@ -104,12 +103,12 @@ public class ChatMessagesActivity extends AppCompatActivity {
 
                     ChatMessageView messageView = (ChatMessageView) v.findViewById(R.id.chatmessageVIEW);
                     TextView text = (TextView) v.findViewById(R.id.chattextTV);
-
                     messageView.setVisibility(View.VISIBLE);
+                    messageView.setArrowPosition(ChatMessageView.ArrowPosition.RIGHT);
+//                    messageView.setArrowGravity(ChatMessageView.ArrowGravity.END);
                     messageView.setGravity(Gravity.RIGHT);
                     messageView.setBackgroundColors(R.color.colorPrimaryDark , R.color.authui_colorAccent);
                     text.setText(model.getMessage());
-
                     mAdapter.notifyDataSetChanged();
 
                 }

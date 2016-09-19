@@ -17,7 +17,7 @@
         android:id="@+id/chatmessageVIEW"
         app:cmv_showArrow="true"
         android:visibility="gone"
-
+        android:layout_margin="10dp"
         >
 
 
@@ -26,7 +26,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hello"
-            android:textColor="#f5f5f5"/>
+            android:textColor="#f5f5f5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+
+            />
 
     </me.himanshusoni.chatmessageview.ChatMessageView>
 
