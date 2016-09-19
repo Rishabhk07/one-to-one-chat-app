@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -46,7 +47,7 @@ public class ChatMessagesActivity extends AppCompatActivity {
         setTitle(name);
 
         messageText = (TextView) findViewById(R.id.msgTV);
-        ListView listview = (ListView) findViewById(R.id.chatmessageLV);
+        final ListView listview = (ListView) findViewById(R.id.chatmessageLV);
 
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -76,16 +77,14 @@ public class ChatMessagesActivity extends AppCompatActivity {
 
 
 
-// /       DatabaseReference ref2 = FirebaseDatabase.getInstance().getReference("ChatMessage").child(usermailsplit).child(emailsplit);
-
         mAdapter = new FirebaseListAdapter<chatsmessages>(this , chatsmessages.class , R.layout.chat_messages_layout , chatMessages ) {
             @Override
             protected void populateView(View v, chatsmessages model, int position) {
 
 
-
-
                 if(model.getSender().toString().equals(userUid) && model.getReceiver().toString().equals(uid)){
+
+                    Log.d("Tag: message", model.getMessage() );
 
                     ChatMessageView messageView = (ChatMessageView) v.findViewById(R.id.chatmessageVIEW);
                     TextView text = (TextView) v.findViewById(R.id.chattextTV);
@@ -98,6 +97,9 @@ public class ChatMessagesActivity extends AppCompatActivity {
                     mAdapter.notifyDataSetChanged();
 
 
+                    Log.d("TAG","END");
+
+
                 }
                 else if(model.getSender().toString().equals(uid) && model.getReceiver().toString().equals(userUid) ){
 
@@ -105,7 +107,7 @@ public class ChatMessagesActivity extends AppCompatActivity {
                     TextView text = (TextView) v.findViewById(R.id.chattextTV);
                     messageView.setVisibility(View.VISIBLE);
                     messageView.setArrowPosition(ChatMessageView.ArrowPosition.RIGHT);
-//                    messageView.setArrowGravity(ChatMessageView.ArrowGravity.END);
+                    messageView.setArrowGravity(ChatMessageView.ArrowGravity.END);
                     messageView.setGravity(Gravity.RIGHT);
                     messageView.setBackgroundColors(R.color.colorPrimaryDark , R.color.authui_colorAccent);
                     text.setText(model.getMessage());
@@ -114,11 +116,16 @@ public class ChatMessagesActivity extends AppCompatActivity {
                 }
 
 
+
+
+
+
             }
 
         };
 
         listview.setAdapter(mAdapter);
+
 
 
 
