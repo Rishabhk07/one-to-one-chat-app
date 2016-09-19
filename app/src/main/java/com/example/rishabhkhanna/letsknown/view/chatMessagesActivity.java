@@ -42,6 +42,9 @@ public class ChatMessagesActivity extends AppCompatActivity {
         final String uid = i.getStringExtra("uid");
         final String name = i.getStringExtra("name");
         final String email = i.getStringExtra("email");
+
+        setTitle(name);
+
         messageText = (TextView) findViewById(R.id.msgTV);
         ListView listview = (ListView) findViewById(R.id.chatmessageLV);
 
@@ -65,12 +68,6 @@ public class ChatMessagesActivity extends AppCompatActivity {
                 messageText.setText("");
 
                 chatsmessages  newMessage = new chatsmessages(sender , receiver , message);
-
-
-//
-//                ref.child(emailsplit).push().setValue(new chatsmessages(name, email , uid , message , ServerValue.TIMESTAMP));
-//                receiverRef.child(usermailsplit).push().setValue(new chatsmessages(name, email , uid , message , ServerValue.TIMESTAMP));
-
                 chatMessages.push().setValue(newMessage);
 
 
@@ -95,6 +92,7 @@ public class ChatMessagesActivity extends AppCompatActivity {
 
 
                     messageView.setVisibility(View.VISIBLE);
+                    messageView.setGravity(Gravity.LEFT);
                     messageView.setBackgroundColors(R.color.colorAccent , R.color.buttonColorPressed);
                     text.setText(model.getMessage());
 
@@ -108,6 +106,7 @@ public class ChatMessagesActivity extends AppCompatActivity {
                     TextView text = (TextView) v.findViewById(R.id.chattextTV);
 
                     messageView.setVisibility(View.VISIBLE);
+                    messageView.setGravity(Gravity.RIGHT);
                     messageView.setBackgroundColors(R.color.colorPrimaryDark , R.color.authui_colorAccent);
                     text.setText(model.getMessage());
 
@@ -115,23 +114,6 @@ public class ChatMessagesActivity extends AppCompatActivity {
 
                 }
 
-
-//                String modelEmail = model.getEmail();
-//                String[] spilt = modelEmail.split("@");
-//                String usercompare = spilt[0];
-//
-//                if(usercompare == usermailsplit){
-//
-//                    messageView.setBackgroundResource(R.color.colorAccent);
-//                    messageView.setHorizontalGravity(Gravity.LEFT);
-//                }else if(usercompare == emailsplit){
-//                    messageView.setBackgroundResource(R.color.colorPrimary);
-//                    messageView.setHorizontalGravity(Gravity.RIGHT);
-//                }
-//                TextView message = (TextView) v.findViewById(R.id.chattextTV);
-//                message.setText(model.getMessage());
-//
-//
 
             }
 

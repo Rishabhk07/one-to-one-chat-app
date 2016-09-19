@@ -15,8 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.LoginActivity" />
-        <activity android:name=".view.UserCreationActivity" />
+        <activity android:name=".view.LoginActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"/>
+        <activity android:name=".view.UserCreationActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name=".view.ChatPage"
             android:label="@string/title_activity_chat_page"

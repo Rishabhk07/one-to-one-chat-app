@@ -12,6 +12,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/chatmessageLV"
             android:layout_above="@+id/sendMessage"
+            android:transcriptMode="alwaysScroll"
             ></ListView>
         <LinearLayout
             android:layout_width="match_parent"

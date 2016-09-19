@@ -5,9 +5,21 @@
     tools:context="com.example.rishabhkhanna.letsknown.Fragments.contactFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/userlistview"></ListView>
+        android:id="@+id/userlistview"
+
+        ></ListView>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:alpha="0.25"
+        android:text="Tap for more options"
+        android:textColor="#333"
+        android:id="@+id/options"
+        />
 
 </FrameLayout>
