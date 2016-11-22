@@ -52,6 +52,7 @@ public class ChatMessagesActivity extends AppCompatActivity {
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         final String userUid = user.getUid();
+        final String userName = user.getDisplayName();
         final String usermail = user.getEmail();
 
 
@@ -68,7 +69,7 @@ public class ChatMessagesActivity extends AppCompatActivity {
 
                 messageText.setText("");
 
-                chatsmessages  newMessage = new chatsmessages(sender , receiver , message);
+                chatsmessages  newMessage = new chatsmessages(sender , receiver , message , );
                 chatMessages.push().setValue(newMessage);
 
 

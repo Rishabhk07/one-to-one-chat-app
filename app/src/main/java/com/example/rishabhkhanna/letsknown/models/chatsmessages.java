@@ -16,14 +16,37 @@ public class chatsmessages {
     String sender;
     String receiver;
     String message;
+    String senderName;
+    String receiverName;
+
+
 
     public chatsmessages() {
     }
 
-    public chatsmessages(String sender, String receiver, String message) {
+    public chatsmessages(String sender, String receiver, String message  ,String senderName ,String receiverName) {
         this.sender = sender;
         this.receiver = receiver;
         this.message = message;
+        this.senderName = senderName;
+        this.receiverName = receiverName;
+    }
+
+
+    public String getSenderName() {
+        return senderName;
+    }
+
+    public void setSenderName(String senderName) {
+        this.senderName = senderName;
+    }
+
+    public String getReceiverName() {
+        return receiverName;
+    }
+
+    public void setReceiverName(String receiverName) {
+        this.receiverName = receiverName;
     }
 
     public String getSender() {

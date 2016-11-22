@@ -73,8 +73,6 @@ public class UserChatsFragment extends Fragment {
 
 
 
-
-
             }
         };
 

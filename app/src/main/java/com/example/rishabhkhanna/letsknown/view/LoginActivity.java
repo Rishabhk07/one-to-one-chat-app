@@ -25,6 +25,11 @@ public class LoginActivity extends AppCompatActivity {
     EditText email;
     EditText password;
 
+    public static final String loginUserName = null;
+    public static final String loginUserEmail = null;
+    public static final String loginUserUid = null;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +63,16 @@ public class LoginActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
 
                             Intent intent = new Intent(LoginActivity.this, ChatPage.class);
+
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users").child(user.getUid());
+
+
+
+
+
+
                             startActivity(intent);
                         }
 
